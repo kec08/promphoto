@@ -24,7 +24,7 @@ export class PhotoSelection {
 
   render(): void {
     const selectCount = this.frame.type === '3cut' ? 3 : 4;
-    const gridPhotos = this.photos.slice(0, 8); // 8장만 그리드에 노출
+    const gridPhotos = this.photos.slice(0, 8);
 
     const previewSlots = Array.from({ length: selectCount })
       .map((_, i) => `<div class="preview-slot" data-slot="${i}"></div>`)
@@ -61,7 +61,7 @@ export class PhotoSelection {
           </div>
 
           <aside class="preview-panel">
-            <div class="preview-strip">
+            <div class="preview-strip" id="preview-strip">
               <div class="preview-top">
                 <span class="preview-brand">promphoto</span>
                 <span class="preview-date">${this.getToday()}</span>
@@ -75,6 +75,15 @@ export class PhotoSelection {
       </div>
     `;
 
+    const strip = this.container.querySelector('#preview-strip') as HTMLElement | null;
+    if (strip && this.frame.aiUrl) {
+      strip.style.backgroundImage = `url(${this.frame.aiUrl})`;
+      strip.style.backgroundSize = 'cover';
+      strip.style.backgroundPosition = 'center';
+      strip.style.backgroundRepeat = 'no-repeat';
+      strip.style.backgroundColor = 'transparent';
+    }
+
     // 사진 클릭 바인딩
     const items = this.container.querySelectorAll<HTMLButtonElement>('.photo-item');
     items.forEach((el) => {
@@ -87,7 +96,7 @@ export class PhotoSelection {
       });
     });
 
-    // 확인 버튼: 로딩 -> 5초 동안 미리 로드 -> 편집 페이지(onComplete)
+    // 확인 버튼
     const confirmBtn = this.container.querySelector('#confirm-btn') as HTMLButtonElement;
     confirmBtn.addEventListener('click', () => {
       if (this.selectedPhotos.length !== selectCount) return;
@@ -120,13 +129,12 @@ export class PhotoSelection {
     let dots = 0;
 
     this.dotsInterval = window.setInterval(() => {
-      dots = (dots + 1) % 4; // 0~3
+      dots = (dots + 1) % 4;
       dotsEl.textContent = '.'.repeat(dots);
     }, 450);
 
     this.loadingTimeout = window.setTimeout(async () => {
       this.cleanupLoadingTimers();
-
       if (this.selectedPhotos.length !== selectCount) return;
 
       try { await preloadPromise; } catch { /* empty */ }

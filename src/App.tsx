@@ -103,7 +103,8 @@ class PrompPhoto {
           type: frameType,
           thumbnail: imageUrl,
           description: "AI 생성 프레임",
-          aiUrl: imageUrl
+          aiUrl: imageUrl,
+          isAI: true
         };
 
         this.state.selectedFrame = aiFrame;

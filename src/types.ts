@@ -19,6 +19,7 @@ export type ProjectState = {
     thumbnail: string;
     description: string;
     aiUrl?: string;
+    isAI?: boolean;
   };
   
   export type CapturedPhoto = {
