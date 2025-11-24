@@ -172,7 +172,7 @@ export class PhotoSelection {
 
   private togglePhotoSelection(
     photo: CapturedPhoto,
-    element: HTMLElement,
+    _element: HTMLElement,
     selectCount: number
   ): void {
     const idx = this.selectedPhotos.findIndex(p => p.id === photo.id);

@@ -434,24 +434,6 @@ private async drawVerticalStrip(
     ctx.restore();
   }  
 
-  private drawBottomBar(ctx: CanvasRenderingContext2D, w: number, outH: number, barH: number) {
-    ctx.save();
-    const y = outH - barH;
-
-    ctx.fillStyle = '#000';
-    ctx.fillRect(0, y, w, barH);
-
-    ctx.fillStyle = '#fff';
-    ctx.textBaseline = 'middle';
-    ctx.font = `${Math.round(barH * 0.25)}px sans-serif`;
-
-    const brand = 'promphoto';
-    const brandW = ctx.measureText(brand).width;
-    ctx.fillText(brand, (w - brandW) / 2, y + barH / 2);
-
-    ctx.restore();
-  }
-
   private getToday(): string {
     const d = new Date();
     const y = d.getFullYear();
