@@ -1017,8 +1017,8 @@ button:disabled {
   width: min(1800px, 86vw);
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 320px; /* 240px -> 320px */
-  gap: 24px; /* 36px -> 24px (그리드-프리뷰 간격도 같이 줄어듦) */
+  grid-template-columns: 1fr 320px;
+  gap: 24px; 
   align-items: center;
 }
 
@@ -1057,7 +1057,6 @@ button:disabled {
   background: transparent;
 }
 
-/* 선택 시 어둡게 */
 .photo-item.selected::after {
   content: "";
   position: absolute;
@@ -1066,7 +1065,6 @@ button:disabled {
   z-index: 2;
 }
 
-/* 선택 순번 숫자 */
 .photo-item .select-order {
   position: absolute;
   top: 12px;
@@ -1079,7 +1077,6 @@ button:disabled {
   pointer-events: none;
 }
 
-/* 9번째 카운터 칸 */
 .counter-cell {
   background: #fff;
   display: flex;
@@ -1174,7 +1171,6 @@ button:disabled {
   margin-top: 4px;
 }
 
-/* 반응형 */
 @media (max-width: 1024px) {
   .photo-selection-layout {
     grid-template-columns: 1fr 200px;

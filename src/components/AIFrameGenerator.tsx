@@ -1,4 +1,3 @@
-// src/components/AIFrameGenerator.tsx
 export class AIFrameGenerator {
   private container: HTMLElement;
 
@@ -6,7 +5,6 @@ export class AIFrameGenerator {
   private onBack: () => void;
   private isGenerating = false;
 
-  // ✅ 선택 상태
   private selectedFrameType: '3cut' | '4cut' = '3cut';
 
   constructor(
@@ -94,7 +92,7 @@ export class AIFrameGenerator {
     `;
 
     this.setupEventListeners();
-    this.syncTypeUI(); // ✅ 초기 UI 동기화
+    this.syncTypeUI();
   }
 
   private setupEventListeners(): void {
@@ -108,7 +106,6 @@ export class AIFrameGenerator {
       promptInput.value = promptInput.value.substring(0, 500);
     });
 
-    // ✅ 타입 버튼 이벤트
     const typeBtns = this.container.querySelectorAll<HTMLButtonElement>('.ai-type-btn');
     typeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -126,7 +123,6 @@ export class AIFrameGenerator {
     confirmBtn?.addEventListener('click', () => this.confirmFrame());
   }
 
-  // ✅ 버튼 active/aria 동기화
   private syncTypeUI() {
     const btn3 = this.container.querySelector('#type-3cut') as HTMLButtonElement | null;
     const btn4 = this.container.querySelector('#type-4cut') as HTMLButtonElement | null;
@@ -174,7 +170,6 @@ export class AIFrameGenerator {
       if (confirmBtn) {
         confirmBtn.disabled = false;
         confirmBtn.dataset.imageUrl = imageDataUrl;
-        // ✅ 현재 선택값 저장
         confirmBtn.dataset.frameType = this.selectedFrameType;
       }
 
@@ -199,7 +194,7 @@ export class AIFrameGenerator {
     if (!apiKey) throw new Error('VITE_OPENAI_API_KEY가 없습니다.');
 
     const enhancedPrompt = `
-고품질 풍경 사진을 생성해주세요. 
+고품질 풍경 사진을 생성해주세요.
 사용자가 원하는 장면: ${prompt}
 
 이미지 요구사항:

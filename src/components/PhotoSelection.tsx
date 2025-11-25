@@ -115,7 +115,7 @@ export class PhotoSelection {
       <div class="result-loading-page" style="background:#1C1C1E;">
         <div class="result-loading-inner">
           <div class="result-loading-brand">
-            <img class="result-loading-logo" src="src/assets/img/logo.png" alt="promphoto" />
+            <img class="result-loading-logo" src="src/assets/img/ai_icon.png" alt="promphoto" />
             <span class="result-loading-title">promphoto</span>
           </div>
           <div class="result-loading-text">

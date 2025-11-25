@@ -1,4 +1,3 @@
-// src/components/FrameSelection.tsx
 import type { Frame } from "../types";
 
 export class FrameSelection {

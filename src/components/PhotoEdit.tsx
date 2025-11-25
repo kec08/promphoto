@@ -1,4 +1,3 @@
-// src/components/PhotoEdit.tsx
 import type { CapturedPhoto, Frame, PhotoEditOptions } from '../types';
 import { FrameService } from '../services/FrameService';
 
@@ -18,7 +17,7 @@ export class PhotoEdit {
 
   private onComplete: () => void;
   private loaded = false;
-  private aiBgImage: HTMLImageElement | null = null; // ✅ AI 배경 캐시
+  private aiBgImage: HTMLImageElement | null = null;
 
   constructor(
     container: HTMLElement,
@@ -109,7 +108,6 @@ export class PhotoEdit {
   }
 
   private async ensureImagesLoaded() {
-    // 1) 사진들은 한 번만 로드
     if (!this.loaded) {
       await Promise.all(
         this.photos.map(p => new Promise<void>((resolve) => {
