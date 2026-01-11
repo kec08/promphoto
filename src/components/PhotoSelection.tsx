@@ -1,4 +1,5 @@
 import type { CapturedPhoto, Frame } from '../types';
+import aiIconUrl from '../assets/img/ai_icon.png';
 
 export class PhotoSelection {
   private container: HTMLElement;
@@ -115,7 +116,7 @@ export class PhotoSelection {
       <div class="result-loading-page" style="background:#1C1C1E;">
         <div class="result-loading-inner">
           <div class="result-loading-brand">
-            <img class="result-loading-logo" src="src/assets/img/ai_icon.png" alt="promphoto" />
+            <img class="result-loading-logo" src="${aiIconUrl}" alt="promphoto" />
             <span class="result-loading-title">promphoto</span>
           </div>
           <div class="result-loading-text">
