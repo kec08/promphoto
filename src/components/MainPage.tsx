@@ -31,7 +31,7 @@ export class MainPage {
               <span class="hero-brand-text">promphoto</span>
             </div>
   
-            <h1 class="hero-title">당신의 상상을, 네 컷으로 담다</h1>
+            <h1 class="hero-title">당신의 상상을 네 컷으로 담다</h1>
             <p class="hero-sub">
               프롬프트로 원하는 프레임을 만들고, 단 한 번의 촬영으로 나만의 네 컷을 남겨보세요!
             </p>
