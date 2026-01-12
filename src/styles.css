@@ -687,7 +687,9 @@ button:disabled {
 .ai-preview-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* 비율 유지하면서 미리보기 박스를 꽉 채움(필요시 일부 크롭) */
+  object-fit: cover;
+  object-position: center;
   animation: fadeInImage 0.6s ease-in;
 }
 
