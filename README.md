@@ -116,6 +116,6 @@ npm run dev
 
 <div align="center">
 
-Made with ❤️ by **PromPhoto Team**
+Made with ❤️ by **KimEunChan**
 
 </div>
