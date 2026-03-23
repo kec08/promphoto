@@ -41,7 +41,11 @@ export class CameraService {
       const context = canvas.getContext('2d');
       if (!context) throw new Error('캔버스 컨텍스트를 가져올 수 없습니다');
       
+      context.save();
+      context.translate(canvas.width, 0);
+      context.scale(-1, 1);
       context.drawImage(this.video, 0, 0, canvas.width, canvas.height);
+      context.restore();
       return canvas.toDataURL('image/jpeg', 0.95);
     }
   }

@@ -940,6 +940,7 @@ button:disabled {
   object-fit: cover;
   display: block;
   z-index: 1;
+  transform: scaleX(-1);
 }
 
 .countdown {
