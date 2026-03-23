@@ -2,6 +2,10 @@
 
 # 📸 PromPhoto
 
+<p align="center">
+  <img width="2048" height="1151" alt="Image" src="https://github.com/user-attachments/assets/fc590472-f274-4d8a-9a04-992ddf85a991" alt="Qiri" width="120"/>
+</p>
+
 **프롬프트 기반 AI 네컷 사진 제작 서비스**
 
 프롬프트 한 줄로 나만의 프레임을 만들고, 브라우저에서 바로 촬영하세요.
